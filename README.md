@@ -3,70 +3,7 @@
 [![hack.d Lawrence McDaniel](https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg)](https://lawrencemcdaniel.com)
 
 
-
-## Implements the following:
-
-### lms.example.edu Configuration API
-
-Assigns the example api server to use for the Open edX instance on which this plugin is installed.
-The api endpoint is: https://lms.example.edu/example/api/v1/configuration
-
-source code is located in openedx_plugin/api/
-
-Uses this Django model: https://lms.example.edu/admin/openedx_plugin/configuration/
-
-
-public url to the api: https://lms.example.edu/example/api/v1/configuration
-
-
-### Wordpress CTA links
-
-Provides a means to embed localization information about the user in CTA buttons that send the user from Wordpress to Open edX. The most common url presently is: https://lms.example.edu/example/dashboard?language=es-419
-
-source code is located in openedx_plugin/dashboard/
-
-### Localized Marketing Links
-
-The reverse case. Provides a generalized way to seamlessly map the user from the LMS to the most sensible marketing site. An example usage is the "Discover New" link in the LMS site header. The url, assigned inside lms.yml within MKTG_URL_OVERRIDES is, https://lms.example.edu/example/marketing-redirector/?example_page=learning-content/ and will redirect to https://example.org/learning-content/ for a US-based user.
-
-Uses this Django model: https://lms.example.edu/admin/openedx_plugin/marketingsites/
-
-
-### Localized html anchor tags
-
-Same as above, but for html anchor tags. In addition to the URL mapping, these also require language translation of the text of the html element value, bearing in mind that we need to avoid changes to the edx-platform po files since we do not want to fork the edx-platform repo.
-
-Uses this Django model: https://lms.example.edu/admin/openedx_plugin/locale/
-
-An example usage would be the "Blog" and "Privacy Policy" links in the LMS site footer. The following is added to the Mako template:
-
-```
-<%!
-  from openedx_plugin.locale.utils import anchor, language_from_request
-%>
-
-<%
-
-  # figure out the best language code to use based on whatever we
-  # know about this user.
-  try:
-    preferred_language = language_from_request(request) or 'en'
-  except:
-    preferred_language = 'en'
-
-  # get a Python dict containing the url and element text.
-  blog_dict = anchor('example-locale-blog', preferred_language)
-%>
-
-```
-
-and the link itself would take the form
-
-```
-    <a id="example-locale-blog" href="${blog_dict.get('url')}">${blog_dict.get('value')}</a>
-```
-
-
+Adds Django signals to disable default ID verification behavior.
 
 ## Getting Started
 
@@ -162,13 +99,4 @@ export OPENBLAS=/opt/homebrew/opt/openblas/lib/
 export LDFLAGS="-L/opt/homebrew/opt/openblas/lib -L/opt/homebrew/opt/mysql-client/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/openblas/include -I/opt/homebrew/opt/mysql-client/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openblas/lib/pkgconfig /opt/homebrew/opt/mysql-client/lib/pkgconfig"
-```
-
-
-### Shell Plus and iPython
-
-The example_edxapi module adds ipython and django-extensions to the stack.  It is then possible to get an enhanced shell via:
-
-```
-tutor local exec lms ./manage.py lms shell_plus
 ```
