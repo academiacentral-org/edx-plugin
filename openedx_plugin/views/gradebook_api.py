@@ -18,7 +18,7 @@ from lms.djangoapps.grades.api import CourseGradeFactory
 from lms.djangoapps.instructor.views.api import require_course_permission
 from xmodule.modulestore.django import modulestore
 
-from .. import permissions
+from lms.djangoapps.instructor import permissions
 
 # Grade book: max students per page
 MAX_STUDENTS_PER_PAGE_GRADE_BOOK = 20
