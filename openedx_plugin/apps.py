@@ -26,7 +26,7 @@ class StepwisePluginConfig(AppConfig):
         PluginURLs.CONFIG: {
             ProjectType.LMS: {
                 PluginURLs.NAMESPACE: name,
-                PluginURLs.REGEX: "^usf/",
+                PluginURLs.REGEX: "^custom/",
                 PluginURLs.RELATIVE_PATH: "urls",
             }
         },
