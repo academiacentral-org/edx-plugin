@@ -5,7 +5,7 @@ Feb-2022
 Scaffolding for future use.
 """
 from django.conf.urls import url
-from views.gradebook_api import spoc_gradebook
+from .views.gradebook_api import spoc_gradebook
 
 # this repo
 app_name = "openedx_plugin"
