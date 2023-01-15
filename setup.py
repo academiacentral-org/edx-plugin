@@ -48,7 +48,7 @@ print("Found packages: {packages}".format(packages=find_packages()))
 print("requirements found: {requirements}".format(requirements=load_requirements("requirements/common.in")))
 
 setup(
-    name="example-plugin",
+    name="academiacentral-plugin",
     version=__version__,
     packages=find_packages(),
     package_data={"": ["*.html"]},  # include any Mako templates found in this repo.
@@ -58,10 +58,10 @@ setup(
     long_description="",
     author="Lawrence McDaniel",
     author_email="lpm0073@gmail.com",
-    url="https://github.com/Turn-The-Bus/example-openedx-plugin",
+    url="https://github.com/academiacentral-org/edx-plugin",
     install_requires=load_requirements("requirements/common.in"),
     zip_safe=False,
-    keywords="Django, Open edX, example",
+    keywords="Django, Open edX, Academia Central",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Framework :: Django",

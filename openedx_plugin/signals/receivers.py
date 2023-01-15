@@ -2,7 +2,7 @@
 Written by:     McDaniel
 Date:           June-2021
 
-Usage:          Custom behaviors for mooc.academiacentral.org.
+Usage:          Custom behaviors for mooc.academiacentral.org and courses.academiacentral.org
                 Presently only used to prevent ID Verification workflows when students pay
                 for courses, but could be used for other things.
 """

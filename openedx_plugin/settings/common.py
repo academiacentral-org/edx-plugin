@@ -13,8 +13,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
-APP_ROOT = path(__file__).abspath().dirname().dirname()  # /blah/blah/blah/.../example_grades
-REPO_ROOT = APP_ROOT.dirname()  # /blah/blah/blah/.../example-digital-learning-openedx
+APP_ROOT = path(__file__).abspath().dirname().dirname()     # /path/to/openedx-plugin/openedx_plugin
+REPO_ROOT = APP_ROOT.dirname()                              # /path/to/openedx-plugin
 TEMPLATES_DIR = APP_ROOT / "templates"
 
 

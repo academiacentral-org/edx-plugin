@@ -1,4 +1,4 @@
-# example Open edX Plugin
+# Open edX Plugin for academiacentral.org 
 
 [![hack.d Lawrence McDaniel](https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg)](https://lawrencemcdaniel.com)
 
@@ -13,7 +13,7 @@ Adds Django signals to disable default ID verification behavior.
 
 ```bash
 # where github-plugin is defined in .ssh/config
-git clone git@github-plugin:Turn-The-Bus/example-openedx-plugin.git -b main  /home/ubuntu/openedx_plugin
+git clone git@github-plugin:academiacentral-org/edx-plugin.git -b main  /home/ubuntu/openedx_plugin
 
 sudo -H -u edxapp bash
 source /edx/app/edxapp/edxapp_env

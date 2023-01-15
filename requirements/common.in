@@ -17,5 +17,5 @@
 
 -c ./constraints.txt
 
-django-environ      # used in example_grades for overrides to openedx_plugin API
+django-environ      # used in openedx_plugin.common for overrides to openedx_plugin API
 django-extensions   # harel's recommended dev tools
